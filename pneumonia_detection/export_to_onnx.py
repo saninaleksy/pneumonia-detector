@@ -24,9 +24,9 @@ def export_onnx(cfg: DictConfig, checkpoint_path: Path, onnx_path: Path) -> Path
     model = PneumoniaModel.load_from_checkpoint(checkpoint_path, cfg=cfg.model)
     model.eval()
 
-    img_size = int(OmegaConf.select(cfg, "img_size"))
-    input_channels = int(OmegaConf.select(cfg, "input_channels"))
-    opset_ver = int(OmegaConf.select(cfg, "opset_version"))
+    img_size = int(OmegaConf.select(cfg, "export.img_size"))
+    input_channels = int(OmegaConf.select(cfg, "export.input_channels"))
+    opset_ver = int(OmegaConf.select(cfg, "export.opset_version"))
 
     device = next(model.parameters()).device
     dummy = torch.randn(1, input_channels, img_size, img_size, device=device)

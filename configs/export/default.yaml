@@ -1,5 +1,5 @@
 img_size: ${data.img_size}
-input_channels: ${model.input_channels}
+input_channels: 1
 
 ckpt_path: artifacts/checkpoints/best.ckpt
 
