@@ -1,0 +1,10 @@
+kaggle_dataset: paultimothymooney/chest-xray-pneumonia
+
+root_dir: data/chest_xray
+batch_size: 32
+num_workers: 4
+img_size: 150
+augmentation: true
+
+val_fraction: 0.25
+seed: 42

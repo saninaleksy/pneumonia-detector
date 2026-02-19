@@ -1,0 +1,15 @@
+seed: 42
+max_epochs: 12
+accelerator: auto
+devices: auto
+num_nodes: 1
+precision: 32
+log_every_n_steps: 10
+deterministic: false
+
+checkpoint:
+  dirpath: artifacts/checkpoints
+  monitor: val_loss
+  mode: min
+  save_top_k: 1
+  filename: best

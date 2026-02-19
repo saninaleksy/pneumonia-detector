@@ -1,0 +1,43 @@
+data:
+  seed: ${data.seed}
+  input_channels: 1
+  img_size: ${data.img_size}
+
+  batch_size: ${data.batch_size}
+  num_workers: ${data.num_workers}
+  augmentation: ${data.augmentation}
+  val_fraction: ${data.val_fraction}
+
+  root_dir: ${data.root_dir}
+  kaggle_dataset: ${data.kaggle_dataset}
+
+backbone:
+  channels: [32, 64, 64, 128, 256]
+  kernel_size: 3
+  stride: 1
+  padding: 1
+  pool_kernel: 2
+  pool_stride: 2
+  ceil_mode: true
+  dropouts: [0.0, 0.1, 0.0, 0.2, 0.2]
+
+head:
+  hidden_dim: 128
+  dropout: 0.2
+
+metrics:
+  threshold: 0.7
+
+optimizer:
+  name: rmsprop
+  lr: 0.001
+
+scheduler:
+  name: reduce_on_plateau
+  monitor: val_loss
+  mode: min
+  factor: 0.3
+  patience: 2
+  min_lr: 0.000001
+  interval: epoch
+  frequency: 1

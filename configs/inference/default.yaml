@@ -1,0 +1,15 @@
+img_size: 150
+input_channels: 1
+
+backend: onnx
+
+img_path: null
+
+onnx_path: artifacts/model.onnx
+
+engine_path: artifacts/model.engine
+
+triton_url: localhost:8000
+triton_model_name: pneumonia_detection
+triton_input_name: input
+triton_output_name: output

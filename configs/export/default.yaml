@@ -1,0 +1,15 @@
+img_size: ${data.img_size}
+input_channels: ${model.input_channels}
+
+ckpt_path: artifacts/checkpoints/best.ckpt
+
+onnx_path: artifacts/model.onnx
+
+engine_path: artifacts/model.engine
+
+fp16: true
+int8: false
+
+workspace_size: 1024
+
+opset_version: 12

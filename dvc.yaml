@@ -1,0 +1,18 @@
+stages:
+  train:
+    cmd: poetry run python -m pneumonia_detection.commands train
+    deps:
+      - pneumonia_detection
+      - configs
+      - data/chest_xray
+    outs:
+      - artifacts/checkpoints
+      - artifacts/plots
+      - artifacts/model.onnx
+
+  convert_tensorrt:
+    cmd: poetry run python -m pneumonia_detection.commands onnx_to_tensorrt
+    deps:
+      - artifacts/model.onnx
+    outs:
+      - artifacts/model.engine

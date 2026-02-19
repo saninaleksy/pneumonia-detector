@@ -1,0 +1,13 @@
+defaults:
+  - data: default
+  - model: default
+  - train: default
+  - logger: mlflow
+  - export: default
+  - inference: default
+  - triton: default
+  - _self_
+
+project:
+  name: pneumonia_detection
+  description: "Chest X‑ray pneumonia classification"
