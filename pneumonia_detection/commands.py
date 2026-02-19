@@ -73,7 +73,6 @@ def setup_triton(*overrides: str) -> None:
 
 
 def infer(*overrides: str) -> None:
-    print(2131312)
     cfg = _compose_cfg(overrides)
     prob = infer_one(cfg)
     print(f"Predicted probability of pneumonia: {prob:.4f}")
